@@ -31,6 +31,13 @@
               <textarea id="subject" name="comment" placeholder="Write and Talk With Us.." style="height:170px"></textarea>
               <input type="submit" value="Submit">
             </form>
+            <form action="{{ url_for('select_users' )}}" method="post">
+              <br><input  type="submit" >
+            </form>
+            <div><h2>
+              Usuarios Cadastrados
+              {{ usuarios }}
+            </div></h2>
           </div>
         </div>
       </div>
