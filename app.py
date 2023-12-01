@@ -22,6 +22,15 @@ def add_user():
 
     return redirect(url_for('contact'))
 
+@app.route('/select_users', methods=['POST', 'GET'])
+def select_users():
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM contato')
+    usuarios = cur.fetchall()
+    cur.close()
+
+    return render_template('contact.html', usuarios=usuarios)
+
 @app.route("/")
 @app.route("/home.html")
 def home():
